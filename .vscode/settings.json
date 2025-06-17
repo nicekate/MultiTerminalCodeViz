@@ -1,0 +1,80 @@
+{
+  "workbench.colorTheme": "Solarized Light",
+  "terminal.integrated.colorScheme": "light",
+  "terminal.integrated.theme": "Solarized Light",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"],
+      "env": {
+        "TERM": "xterm-256color"
+      }
+    },
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"],
+      "env": {
+        "TERM": "xterm-256color"
+      }
+    }
+  },
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"],
+      "env": {
+        "TERM": "xterm-256color"
+      }
+    },
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"],
+      "env": {
+        "TERM": "xterm-256color"
+      }
+    }
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "Monaco, 'Courier New', monospace",
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.cursorBlinking": true,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#fdf6e3",
+    "terminal.foreground": "#657b83",
+    "terminalCursor.background": "#657b83",
+    "terminalCursor.foreground": "#657b83",
+    "terminal.ansiBlack": "#073642",
+    "terminal.ansiBlue": "#268bd2",
+    "terminal.ansiBrightBlack": "#002b36",
+    "terminal.ansiBrightBlue": "#839496",
+    "terminal.ansiBrightCyan": "#93a1a1",
+    "terminal.ansiBrightGreen": "#586e75",
+    "terminal.ansiBrightMagenta": "#6c71c4",
+    "terminal.ansiBrightRed": "#cb4b16",
+    "terminal.ansiBrightWhite": "#fdf6e3",
+    "terminal.ansiBrightYellow": "#657b83",
+    "terminal.ansiCyan": "#2aa198",
+    "terminal.ansiGreen": "#859900",
+    "terminal.ansiMagenta": "#d33682",
+    "terminal.ansiRed": "#dc322f",
+    "terminal.ansiWhite": "#eee8d5",
+    "terminal.ansiYellow": "#b58900"
+  }
+}

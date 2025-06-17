@@ -6,6 +6,17 @@
 [![Vite](https://img.shields.io/badge/Vite-5.2.0-purple)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.3-cyan)](https://tailwindcss.com/)
 
+## 📋 项目来源
+
+本项目 Fork 自 [https://github.com/gkamradt/MultiTerminalCodeViz](https://github.com/gkamradt/MultiTerminalCodeViz)
+
+**本地化改进说明：**
+- ✅ **中文化翻译** - README 文档已从英文完整翻译为中文版本
+- ✅ **文档完善** - 对原项目文档进行了大幅补充和完善，增加了更详细的使用说明
+- ✅ **架构图表** - 新增了项目架构图、数据流图和用户交互流程图
+- ✅ **开发指南** - 添加了完整的开发指南、API 文档和贡献指南
+- ✅ **技术说明** - 详细解释了真实 vs 模拟的技术实现原理
+
 > 🎉 **这是一个有趣的项目 - 欢迎提交 PR！**
 
 一个基于 React 的多终端代码可视化工具，可以显示多个可拖拽、可调整大小的终端窗口，具有动画打字效果。每个终端显示不同的开发场景，支持自定义主题和可变打字速度。

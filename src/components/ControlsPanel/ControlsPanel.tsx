@@ -8,8 +8,8 @@ interface ControlsPanelProps {
   onArrangeTerminals?: () => void;
   minTerminals?: number;
   maxTerminals?: number;
-  catCount?: number;
-  onRemoveAllCats?: () => void;
+  bunnyCount?: number;
+  onRemoveAllBunnies?: () => void;
 }
 
 export function ControlsPanel({ 
@@ -18,8 +18,8 @@ export function ControlsPanel({
   onArrangeTerminals,
   minTerminals = 1, 
   maxTerminals = 10000,
-  catCount = 0,
-  onRemoveAllCats
+  bunnyCount = 0,
+  onRemoveAllBunnies
 }: ControlsPanelProps) {
   const [isVisible, setIsVisible] = useState(true);
   const { themeName, setTheme, getThemeNames } = useTheme();
@@ -82,7 +82,7 @@ export function ControlsPanel({
         className={`fixed top-4 left-4 bg-gray-800 border border-gray-600 rounded-lg shadow-lg transition-transform duration-300 ${
           isVisible ? 'translate-x-0' : '-translate-x-full'
         }`}
-        style={{ zIndex: 10001 }} // Ensure controls are always above cats and terminals
+        style={{ zIndex: 10001 }} // Ensure controls are always above bunnies and terminals
       >
         <div className="p-4 space-y-3">
           {/* Header */}
@@ -169,21 +169,21 @@ export function ControlsPanel({
             Theme: {themeName}
           </button>
 
-          {/* Cat Controls (only show if cats exist) */}
-          {catCount > 0 && onRemoveAllCats && (
+          {/* Bunny Controls (only show if bunnies exist) */}
+          {bunnyCount > 0 && onRemoveAllBunnies && (
             <div className="space-y-2">
               <div className="text-center">
                 <span className="text-white font-mono text-xs">
-                  🐱 {catCount} vibe cat{catCount !== 1 ? 's' : ''}
+                  🐰 {bunnyCount} vibe bunny{bunnyCount !== 1 ? 'ies' : 'y'}
                 </span>
               </div>
               <button
-                onClick={onRemoveAllCats}
+                onClick={onRemoveAllBunnies}
                 className="w-full bg-orange-600 hover:bg-orange-700 text-white rounded py-2 px-3 text-sm font-medium transition-colors border-0"
                 style={{ backgroundColor: '#ea580c' }}
-                aria-label="Remove all cats"
+                aria-label="Remove all bunnies"
               >
-                Remove Cats
+                Remove Bunnies
               </button>
             </div>
           )}

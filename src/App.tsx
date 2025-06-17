@@ -4,7 +4,7 @@ import { AppProvider } from './contexts/AppContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { TerminalWindow } from './components/TerminalWindow/TerminalWindow';
 import { ControlsPanel } from './components/ControlsPanel/ControlsPanel';
-import { BouncyCat } from './components/BouncyCat/BouncyCat';
+import { BouncyBunny } from './components/BouncyBunny/BouncyBunny';
 import { AsciiTyper } from './pages/AsciiTyper';
 import { useState } from 'react';
 import { Analytics } from "@vercel/analytics/react"
@@ -49,12 +49,12 @@ function AppContent() {
     },
   ]);
 
-  // Bouncy cats state
-  const [cats, setCats] = useState<string[]>([]);
+  // Bouncy bunnies state
+  const [bunnies, setBunnies] = useState<string[]>([]);
 
-  
-  // Use actual count for cats, not rendered count - allow up to 1000 cats
-  // const expectedCatCount = Math.min(Math.floor(actualTerminalCount / 5), 1000);
+
+  // Use actual count for bunnies, not rendered count - allow up to 1000 bunnies
+  // const expectedBunnyCount = Math.min(Math.floor(actualTerminalCount / 5), 1000);
 
   const handleTerminalCountChange = (count: number) => {
     // Update the actual terminal count (can go to 10,000+)
@@ -92,21 +92,21 @@ function AppContent() {
       setHighestZIndex(newZ);
       setNextTerminalId(newNextId);
       
-      // Update cats based on new actual terminal count (max 1000 cats)
-      const newExpectedCatCount = Math.min(Math.floor(count / 5), 1000);
-      setCats(prevCats => {
-        if (newExpectedCatCount > prevCats.length) {
-          // Add new cats
-          const newCats = [...prevCats];
-          for (let i = prevCats.length; i < newExpectedCatCount; i++) {
-            newCats.push(`cat-${Date.now()}-${i}`);
+      // Update bunnies based on new actual terminal count (max 1000 bunnies)
+      const newExpectedBunnyCount = Math.min(Math.floor(count / 5), 1000);
+      setBunnies(prevBunnies => {
+        if (newExpectedBunnyCount > prevBunnies.length) {
+          // Add new bunnies
+          const newBunnies = [...prevBunnies];
+          for (let i = prevBunnies.length; i < newExpectedBunnyCount; i++) {
+            newBunnies.push(`bunny-${Date.now()}-${i}`);
           }
-          return newCats;
-        } else if (newExpectedCatCount < prevCats.length) {
-          // Remove excess cats if terminals are removed
-          return prevCats.slice(0, newExpectedCatCount);
+          return newBunnies;
+        } else if (newExpectedBunnyCount < prevBunnies.length) {
+          // Remove excess bunnies if terminals are removed
+          return prevBunnies.slice(0, newExpectedBunnyCount);
         }
-        return prevCats;
+        return prevBunnies;
       });
       
       return updated;
@@ -121,16 +121,16 @@ function AppContent() {
     setTerminals((prev) => {
       const updated = prev.filter(terminal => terminal.id !== terminalId);
       
-      // Update cats when terminal count changes (max 1000 cats)
-      const newExpectedCatCount = Math.min(Math.floor(newCount / 5), 1000);
-      setCats(prevCats => prevCats.slice(0, newExpectedCatCount));
+      // Update bunnies when terminal count changes (max 1000 bunnies)
+      const newExpectedBunnyCount = Math.min(Math.floor(newCount / 5), 1000);
+      setBunnies(prevBunnies => prevBunnies.slice(0, newExpectedBunnyCount));
       
       return updated;
     });
   };
 
-  const handleRemoveAllCats = () => {
-    setCats([]);
+  const handleRemoveAllBunnies = () => {
+    setBunnies([]);
   };
 
   const handlePositionChange = (terminalId: string, position: { x: number; y: number }) => {
@@ -217,8 +217,8 @@ function AppContent() {
         terminalCount={actualTerminalCount}
         onTerminalCountChange={handleTerminalCountChange}
         onArrangeTerminals={handleArrangeTerminals}
-        catCount={cats.length}
-        onRemoveAllCats={handleRemoveAllCats}
+        bunnyCount={bunnies.length}
+        onRemoveAllBunnies={handleRemoveAllBunnies}
       />
 
       {/* Terminal Container */}
@@ -246,12 +246,12 @@ function AppContent() {
         ))}
       </div>
 
-      {/* Bouncy Cats - render above everything */}
-      {cats.map((catId) => (
-        <BouncyCat 
-          key={catId} 
-          id={catId}
-          totalCatCount={cats.length}
+      {/* Bouncy Bunnies - render above everything */}
+      {bunnies.map((bunnyId) => (
+        <BouncyBunny
+          key={bunnyId}
+          id={bunnyId}
+          totalBunnyCount={bunnies.length}
         />
       ))}
     </div>

@@ -17,7 +17,7 @@
 - 🎭 **动画效果** - 逼真的打字动画效果，模拟真实的编程场景
 - 🎯 **拖拽调整** - 终端窗口可自由拖拽和调整大小
 - 🎵 **背景音乐** - 集成 YouTube 音频播放器，支持 lofi 背景音乐
-- 🐱 **彩蛋功能** - 可爱的弹跳猫咪动画
+- 🐰 **彩蛋功能** - 可爱的弹跳兔子动画
 - 📱 **响应式设计** - 支持不同屏幕尺寸
 - 🎪 **ASCII 艺术** - 内置 ASCII 艺术生成器
 
@@ -133,7 +133,7 @@ graph TB
     subgraph "组件层"
         TerminalWindow[TerminalWindow - 终端窗口]
         ControlsPanel[ControlsPanel - 控制面板]
-        BouncyCat[BouncyCat - 弹跳猫咪]
+        BouncyBunny[BouncyBunny - 弹跳兔子]
         YouTubePlayer[YouTube 音频播放器]
     end
 
@@ -163,7 +163,7 @@ graph TB
 
     MainPage --> TerminalWindow
     MainPage --> ControlsPanel
-    MainPage --> BouncyCat
+    MainPage --> BouncyBunny
 
     ControlsPanel --> YouTubePlayer
 
@@ -214,13 +214,13 @@ flowchart TD
     Controls -->|减少终端| RemoveTerminal[移除终端窗口]
     Controls -->|切换主题| ChangeTheme[更新所有终端主题]
     Controls -->|播放音乐| PlayMusic[启动YouTube播放器]
-    Controls -->|添加猫咪| AddCat[创建弹跳猫咪]
+    Controls -->|添加兔子| AddBunny[创建弹跳兔子]
 
     AddTerminal --> Animation[启动打字动画]
     RemoveTerminal --> Update[更新终端列表]
     ChangeTheme --> Refresh[刷新界面样式]
     PlayMusic --> Audio[播放背景音乐]
-    AddCat --> Bounce[猫咪开始弹跳]
+    AddBunny --> Bounce[兔子开始弹跳]
 
     Animation --> Loop[循环播放内容]
     Update --> MainInterface
@@ -245,13 +245,13 @@ flowchart TD
 MultiTerminalCodeViz/
 ├── public/                          # 静态资源
 │   ├── favicon.ico                  # 网站图标
-│   ├── nyancat.gif                  # 彩蛋猫咪动画
+│   ├── bunny.gif                    # 彩蛋兔子动画
 │   ├── sonomaBackground.jpg         # 背景图片
 │   └── og.png                       # Open Graph 图片
 ├── src/                             # 源代码
 │   ├── components/                  # React 组件
-│   │   ├── BouncyCat/              # 弹跳猫咪组件
-│   │   │   └── BouncyCat.tsx
+│   │   ├── BouncyBunny/            # 弹跳兔子组件
+│   │   │   └── BouncyBunny.tsx
 │   │   ├── ControlsPanel/          # 控制面板组件
 │   │   │   └── ControlsPanel.tsx
 │   │   ├── TerminalWindow/         # 终端窗口组件
@@ -376,7 +376,7 @@ interface TerminalWindowProps {
 - ✅ 终端数量控制（1-10000个）
 - ✅ 主题切换
 - ✅ 音频播放器集成
-- ✅ 猫咪动画控制
+- ✅ 兔子动画控制
 - ✅ 面板显示/隐藏切换
 
 **使用方法**:
@@ -385,8 +385,8 @@ interface TerminalWindowProps {
   terminalCount={terminalCount}
   onTerminalCountChange={handleTerminalCountChange}
   onArrangeTerminals={handleArrangeTerminals}
-  catCount={cats.length}
-  onRemoveAllCats={handleRemoveAllCats}
+  bunnyCount={bunnies.length}
+  onRemoveAllBunnies={handleRemoveAllBunnies}
 />
 ```
 
@@ -443,14 +443,14 @@ interface TerminalTheme {
 
 **访问方式**: 访问 `/typer` 路径
 
-### 6. 弹跳猫咪动画
+### 6. 弹跳兔子动画
 
-**位置**: `src/components/BouncyCat/BouncyCat.tsx`
+**位置**: `src/components/BouncyBunny/BouncyBunny.tsx`
 
 **功能特性**:
 - ✅ 物理引擎模拟的弹跳效果
 - ✅ 边界碰撞检测
-- ✅ 性能优化（基于猫咪数量的帧率调节）
+- ✅ 性能优化（基于兔子数量的帧率调节）
 - ✅ 响应式窗口大小调整
 
 ## 🔧 开发指南
@@ -627,8 +627,8 @@ interface ControlsPanelProps {
   onArrangeTerminals?: () => void;              // 重新排列终端回调
   minTerminals?: number;                        // 最小终端数量
   maxTerminals?: number;                        // 最大终端数量
-  catCount?: number;                            // 猫咪数量
-  onRemoveAllCats?: () => void;                 // 移除所有猫咪回调
+  bunnyCount?: number;                          // 兔子数量
+  onRemoveAllBunnies?: () => void;              // 移除所有兔子回调
 }
 ```
 

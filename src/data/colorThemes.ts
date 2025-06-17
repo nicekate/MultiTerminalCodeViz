@@ -106,7 +106,22 @@ export const terminalThemes: Record<string, TerminalTheme> = {
       secondary: 'text-[#839496]',
       command: 'text-[#586e75]'
     }
+  },
+  solarizedLight: {
+    name: 'Solarized Light',
+    background: 'bg-[#fdf6e3]',
+    colors: {
+      muted: 'text-[#93a1a1]',
+      success: 'text-[#859900]',
+      warning: 'text-[#b58900]',
+      error: 'text-[#dc322f]',
+      info: 'text-[#268bd2]',
+      accent: 'text-[#2aa198]',
+      primary: 'text-[#657b83]',
+      secondary: 'text-[#586e75]',
+      command: 'text-[#93a1a1]'
+    }
   }
 };
 
-export const defaultTheme = 'dark';
+export const defaultTheme = 'solarizedLight';
